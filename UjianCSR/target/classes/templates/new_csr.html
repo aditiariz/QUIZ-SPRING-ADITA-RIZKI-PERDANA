@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+
+<title>Tambah Member</title>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+ <div align="left">
+        <h1>Tambah Data</h1>
+        <br />
+        <form action="#" th:action="@{/save}" th:object="${tblprogramcsr}"
+            method="post">
+            
+    <div class="form-group">
+      <label for="email">ID:</label>
+      <input type="text" class="form-control" th:field="*{id}" id="id"  placeholder="Read Only" name="id" readonly="readonly">
+    </div> 
+    
+    <div class="form-group">
+      <label for="pwd">Nama Member:</label>
+      <input type="text" class="form-control" th:field="*{name}" id="nama" placeholder="Masukan Nama Member" name="nama">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Category:</label>
+      <br/>
+      <select name="dept" th:field="*{category}" id="dept">
+                <option value="Pendidikan">Pendidikan</option>
+                <option value="Kesehatan">Kesehatan</option>
+                <option value="Masyarakat dan Lingkungan Hidup">Masyarakat dan Lingkungan Hidup</option>
+                
+            </select>
+    </div>
+   
+     <div class="form-group">
+      <label for="pwd">Location:</label>
+      <br/>
+      <select name="location" th:field="*{location}" id="loc">
+                 <option value="DKI Jakarta">DKI Jakarta</option>
+                <option value="Banten">Banten</option>
+                <option value="Jawa Barat">Jawa Barat</option>
+                 <option value="Jawa Tengah">Jawa Tengah</option>
+                 <option value="Jawa Timur">Jawa Timur</option>
+            </select>
+    </div>
+    
+     <div class="form-group">
+      <label for="pwd">Plan Date:</label>
+      <input type="date" class="form-control" th:field="*{plandate}" id="tgl" placeholder="Masukan Tanggal Daftar" name="tgl">
+    </div>
+    <button type="submit" class="btn btn-default">Save</button>
+  </form>
+    </div>
+
+
+</body>
+</html>
